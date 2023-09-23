@@ -2,6 +2,11 @@ import streamlit as st
 
 from utils import caption_block, get_sentiment, spell_check, get_sentence_sentiment, sentiment_sample_text
 
+import subprocess
+
+subprocess.run(['python3', '-m', 'textblob.download_corpora'])
+subprocess.run(['python3', '-m', 'nltk.downloader', 'stopwords'])
+subprocess.run(['python3', '-m', 'nltk.downloader', 'punkt'])
 
 st.title('📝 Natural language processing')
 st.caption(caption_block)
