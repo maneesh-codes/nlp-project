@@ -3,7 +3,7 @@ from textblob import TextBlob
 import pandas as pd
 import nltk
 nltk.download('punkt')
-
+nltk.download('averaged_perceptron_tagger')
 
 subprocess.run(['python3', '-m', 'textblob.download_corpora'])
 subprocess.run(['python3', '-m', 'nltk.downloader', 'stopwords'])
