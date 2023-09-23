@@ -1,4 +1,5 @@
 from textblob import TextBlob
+import pandas as pd
 import nltk
 nltk.download('punkt')
 
@@ -57,3 +58,16 @@ def get_sentence_sentiment(text: str, threshold: float = 0.3):
 def spell_check(text: str):
     blob = TextBlob(text)
     return blob.correct()
+
+
+def get_pos(text: str):
+    '''
+    Part-of-speech Tagging
+    '''
+    blob = TextBlob(text)
+    tags = {}
+    for x, y in blob.tags:
+        tags[y] = x
+
+    df = pd.DataFrame(data=tags, index=['words'])
+    return df

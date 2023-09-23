@@ -1,6 +1,6 @@
 import streamlit as st
 
-from utils import caption_block, get_sentiment, spell_check, get_sentence_sentiment, sentiment_sample_text
+from utils import caption_block, get_sentiment, spell_check, get_sentence_sentiment, sentiment_sample_text, get_pos
 
 import subprocess
 
@@ -12,7 +12,8 @@ st.title('📝 Natural language processing')
 st.caption(caption_block)
 
 
-tab1, tab2 = st.tabs(["Sentiment Analysis", "Spelling Correction"])
+tab1, tab2, tab3 = st.tabs(
+    ["Sentiment Analysis", "Spelling Correction", "Part-of-speech Tagging"])
 
 
 with tab1:
@@ -45,3 +46,9 @@ with tab2:
     with col2:
         st.markdown("#### Input ✍")
         st.caption(spelling_text)
+
+
+with tab3:
+    pos_input_text = st.text_input(label="Enter your text ✏")
+    pos_output_df = get_pos(pos_input_text)
+    st.write(pos_output_df)
