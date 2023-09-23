@@ -1,5 +1,6 @@
 from textblob import TextBlob
-
+import nltk
+nltk.download('punkt')
 
 caption_block = """
 
