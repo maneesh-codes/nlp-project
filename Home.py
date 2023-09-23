@@ -46,6 +46,6 @@ with tab2:
 
 with tab3:
     pos_input_text = st.text_input(
-        label="Enter your text ✏", value="I am cool.")
+        label="Enter your text ✏", value="I work at Google and this is my sentence.")
     pos_output_df = get_pos(pos_input_text)
     st.write(pos_output_df)
