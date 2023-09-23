@@ -1,7 +1,13 @@
+import subprocess
 from textblob import TextBlob
 import pandas as pd
 import nltk
 nltk.download('punkt')
+
+
+subprocess.run(['python3', '-m', 'textblob.download_corpora'])
+subprocess.run(['python3', '-m', 'nltk.downloader', 'stopwords'])
+subprocess.run(['python3', '-m', 'nltk.downloader', 'punkt'])
 
 caption_block = """
 
